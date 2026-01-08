@@ -1,0 +1,22 @@
+[ {
+  "id" : "402590349",
+  "name" : "Kendall Chacon",
+  "phone" : "62712021",
+  "mail" : "kendall@gmail.com",
+  "address" : "La Victoria, Sarapiqui, Heredia",
+  "vehicles" : null
+}, {
+  "id" : "501230456",
+  "name" : "Alison Ramirez Medina",
+  "phone" : "12345678",
+  "mail" : "ali@gmail.com",
+  "address" : "El Semillero. Sarapiqui Heredia",
+  "vehicles" : null
+}, {
+  "id" : "402590347",
+  "name" : "Fabricio Molina",
+  "phone" : "62712021",
+  "mail" : "fab@gmail.com",
+  "address" : "La Victoria, Sarapiqui Heredia",
+  "vehicles" : null
+} ]
