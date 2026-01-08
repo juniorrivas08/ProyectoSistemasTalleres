@@ -12,7 +12,7 @@ public class MechanicData {
 
     public static boolean save(Mechanic mechanic) {
         try {
-            jsonUtils.saveElement(mechanic, Mechanic.class);
+            jsonUtils.saveElement(mechanic);
             System.out.println("Vehiculo guardado exitosamente");
             return true;
         } catch (Exception e) {

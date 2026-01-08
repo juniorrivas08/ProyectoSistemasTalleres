@@ -1,11 +1,8 @@
 package domain;
 
-import java.util.LinkedList;
-
 public class Client extends Person {
 	
 	private String address;
-	private LinkedList<Vehicle> vehicles;
 	
 	public Client() {
 		
@@ -24,14 +21,6 @@ public class Client extends Person {
 		this.address = address;
 	}
 	
-		
-	public LinkedList<Vehicle> getVehicles() {
-		return vehicles;
-	}
-
-	public void setVehicles(LinkedList<Vehicle> vehicles) {
-		this.vehicles = vehicles;
-	}
 
 	public String toString() {
 		return super.toString()+address;

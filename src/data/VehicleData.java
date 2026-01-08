@@ -11,7 +11,7 @@ public class VehicleData {
 
     public static boolean save(Vehicle vehicle) {
         try {
-            jsonUtils.saveElement(vehicle, Vehicle.class);
+            jsonUtils.saveElement(vehicle);
             System.out.println("Vehículo guardado exitosamente");
             return true;
         } catch (Exception e) {

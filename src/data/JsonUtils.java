@@ -23,31 +23,33 @@ public class JsonUtils<T> {
         this.filePath = path;
     }
 
-    public List<T> getAll(Class<T> clazz) throws IOException {
-        File file = new File(this.filePath);
-        
-        if (!file.exists() || file.length() == 0) {
-            return new ArrayList<>();
-        }
-
-        try {
-            return mapper.readValue(file, 
-                mapper.getTypeFactory().constructCollectionType(List.class, clazz));
-        } catch (Exception e) {
-       
-            System.err.println("Archivo JSON corrupto. Creando backup y archivo nuevo.");
-            File backup = new File(this.filePath + ".backup");
-            file.renameTo(backup);
-            return new ArrayList<>();
-        }
-    }
-
-    public void saveElement(T element, Class<T> clazz) throws IOException {
-        List<T> list = getAll(clazz);
-        list.add(element);
-        saveAll(list);
-    }
+    public List<T> getAll(Class<T> temp) throws Exception {
+		File file = new File(this.filePath);
+		if(!file.exists()) {
+			return new ArrayList<T>();
+		}
+		return mapper.readValue(file, mapper.getTypeFactory().
+				constructCollectionType(List.class, temp));
+	}
+	
+	public void saveElement (T t) throws Exception{
+		List<T> temp = getAll((Class<T>) t.getClass());
+		temp.add(t);
+		mapper.writeValue(new File(filePath), temp);
+	}
     
+	public void deleteElement(T t, int index) throws Exception {
+		List<T> temp = getAll((Class<T>) t.getClass());
+		temp.remove(index);
+		mapper.writeValue(new File(filePath), temp);
+	}
+	
+	public void editElement(T t, int index) throws Exception {
+		List<T> list = getAll((Class<T>) t.getClass());
+		list.set(index, t);
+		mapper.writeValue(new File(filePath), list);
+	}
+	
     public void saveAll(List<T> list) throws IOException {
         File file = new File(filePath);
         
