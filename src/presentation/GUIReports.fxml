@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="business.GUIReportsController">
+   <children>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="38.0" prefWidth="872.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Reportes y búsquedas avanzadas" />
+      
+      <TabPane layoutX="14.0" layoutY="75.0" prefHeight="560.0" prefWidth="872.0" tabClosingPolicy="UNAVAILABLE">
+         
+         <tabs>
+            <Tab text="Órdenes por Vehículo">
+               <content>
+                  <AnchorPane prefHeight="530.0" prefWidth="872.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="20.0" style="-fx-font-weight: bold;" text="Buscar órdenes de trabajo por vehículo" />
+                        
+                        <Label layoutX="20.0" layoutY="55.0" text="Placa del vehículo:" />
+                        <TextField fx:id="tfVehiclePlate" layoutX="145.0" layoutY="51.0" prefWidth="200.0" promptText="Ej: ABC234" />
+                        <Button fx:id="btnSearchVehicle" layoutX="360.0" layoutY="51.0" mnemonicParsing="false" onAction="#searchOrdersVehicle" prefHeight="26.0" prefWidth="104.0" text="Buscar" />
+                        <Button fx:id="btnClearVehicle" layoutX="475.0" layoutY="50.0" mnemonicParsing="false" onAction="#clearOrdersVehicle" prefHeight="26.0" prefWidth="104.0" text="Limpiar" />
+                        
+                        <Label layoutX="20.0" layoutY="110.0" style="-fx-font-weight: bold;" text="Resultados:" />
+                        
+                        <TableView fx:id="tvVehicleOrders" layoutX="20.0" layoutY="140.0" prefHeight="320.0" prefWidth="832.0" />
+                        
+                        <Label layoutX="20.0" layoutY="475.0" text="Total de órdenes:" />
+                        <Label fx:id="lblTotalVehicle" layoutX="130.0" layoutY="475.0" text="0" />
+                        <Label layoutX="200.0" layoutY="475.0" text="Costo total acumulado:" />
+                        <Label fx:id="lblCostVehicle" layoutX="350.0" layoutY="475.0" text="₡ 0.00" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            
+            <Tab text="Órdenes por Mecánico">
+               <content>
+                  <AnchorPane prefHeight="530.0" prefWidth="872.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="20.0" style="-fx-font-weight: bold;" text="Buscar órdenes de trabajo por mecánico" />
+                        
+                        <Label layoutX="20.0" layoutY="55.0" text="Seleccionar mecánico:" />
+                        <ComboBox fx:id="cbMechanic" layoutX="160.0" layoutY="51.0" prefWidth="250.0" promptText="Seleccione un mecánico" />
+                        
+                        <Label layoutX="20.0" layoutY="95.0" text="Estado:" />
+                        <ComboBox fx:id="cbStatus" layoutX="80.0" layoutY="91.0" prefWidth="150.0" promptText="Todos" />
+                        
+                        <Label layoutX="250.0" layoutY="95.0" text="Desde:" />
+                        <DatePicker fx:id="dpStart" layoutX="305.0" layoutY="91.0" prefWidth="140.0" promptText="Fecha inicio" />
+                        
+                        <Label layoutX="465.0" layoutY="95.0" text="Hasta:" />
+                        <DatePicker fx:id="dpEnd" layoutX="515.0" layoutY="91.0" prefWidth="140.0" promptText="Fecha fin" />
+                        
+                        <Button fx:id="btnSearchMechanic" layoutX="675.0" layoutY="91.0" mnemonicParsing="false" onAction="#searchOrdersMechanic" prefHeight="26.0" prefWidth="72.0" text="Buscar" />
+                        <Button fx:id="btnClearMechanic" layoutX="766.0" layoutY="91.0" mnemonicParsing="false" onAction="#clearOrdersMechanic" prefHeight="26.0" prefWidth="72.0" text="Limpiar" />
+                        
+                        <Label layoutX="20.0" layoutY="150.0" style="-fx-font-weight: bold;" text="Resultados:" />
+                        
+                        <TableView fx:id="tvMechanicOrders" layoutX="20.0" layoutY="180.0" prefHeight="280.0" prefWidth="832.0" />
+                        
+                        <Label layoutX="20.0" layoutY="475.0" text="Total de órdenes:" />
+                        <Label fx:id="lblTotalMechanic" layoutX="130.0" layoutY="475.0" text="0" />
+                        <Label layoutX="200.0" layoutY="475.0" text="Costo total:" />
+                        <Label fx:id="lblCostMechanic" layoutX="280.0" layoutY="475.0" text="₡ 0.00" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            
+            <Tab text="Historial de Servicios">
+               <content>
+                  <AnchorPane prefHeight="530.0" prefWidth="872.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="20.0" style="-fx-font-weight: bold;" text="Historial de mantenimiento por vehículo" />
+                        
+                        <Label layoutX="20.0" layoutY="55.0" text="Placa del vehículo:" />
+                        <TextField fx:id="tfPlateHistory" layoutX="145.0" layoutY="51.0" prefWidth="200.0" promptText="Ej: ABC1234" />
+                        <Button fx:id="btnSearchHistory" layoutX="360.0" layoutY="51.0" mnemonicParsing="false" onAction="#searchServiceHistory" text="Buscar Historial" />
+                        <Button fx:id="btnClearHistory" layoutX="485.0" layoutY="51.0" mnemonicParsing="false" onAction="#clearHistory" prefHeight="26.0" prefWidth="90.0" text="Limpiar" />
+                        
+                        <Label layoutX="20.0" layoutY="110.0" style="-fx-font-weight: bold;" text="Servicios realizados:" />
+                        
+                        <TableView fx:id="tvServiceHistory" layoutX="20.0" layoutY="140.0" prefHeight="320.0" prefWidth="832.0" />
+                        
+                        <Label layoutX="20.0" layoutY="475.0" text="Total de servicios:" />
+                        <Label fx:id="lblTotalServices" layoutX="135.0" layoutY="475.0" text="0" />
+                        <Label layoutX="200.0" layoutY="475.0" text="Gasto total histórico:" />
+                        <Label fx:id="lblTotalSpent" layoutX="330.0" layoutY="475.0" text="₡ 0.00" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            
+            <Tab text="Búsquedas Avanzadas">
+               <content>
+                  <AnchorPane prefHeight="530.0" prefWidth="872.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="20.0" style="-fx-font-weight: bold;" text="Búsquedas y filtros avanzados" />
+                        
+                        <Label layoutX="20.0" layoutY="55.0" style="-fx-font-weight: bold; -fx-font-size: 12px;" text="1. Vehículos con órdenes en proceso:" />
+                        <Button fx:id="btnInProcess" layoutX="20.0" layoutY="80.0" mnemonicParsing="false" onAction="#searchVehiclesInProcess" text="Buscar Vehículos en Proceso" />
+                        <Label fx:id="lblResultProcess" layoutX="220.0" layoutY="84.0" text="" />
+                        
+                        <Label layoutX="20.0" layoutY="135.0" style="-fx-font-weight: bold; -fx-font-size: 12px;" text="2. Órdenes de trabajo por rango de fechas:" />
+                        <Label layoutX="20.0" layoutY="165.0" text="Desde:" />
+                        <DatePicker fx:id="dpRangeStart" layoutX="75.0" layoutY="161.0" prefWidth="140.0" />
+                        <Label layoutX="235.0" layoutY="165.0" text="Hasta:" />
+                        <DatePicker fx:id="dpRangeEnd" layoutX="285.0" layoutY="161.0" prefWidth="140.0" />
+                        <Button fx:id="btnSearchRange" layoutX="445.0" layoutY="161.0" mnemonicParsing="false" onAction="#searchOrdersRange" prefHeight="26.0" prefWidth="88.0" text="Buscar" />
+                        
+                        <Label layoutX="20.0" layoutY="220.0" style="-fx-font-weight: bold; -fx-font-size: 12px;" text="3. Clientes con gasto mayor a cierto monto:" />
+                        <Label layoutX="20.0" layoutY="250.0" text="Monto mínimo (₡):" />
+                        <TextField fx:id="tfMinAmount" layoutX="140.0" layoutY="246.0" prefWidth="150.0" promptText="Ej: 100000" />
+                        <Button fx:id="btnSearchAmount" layoutX="310.0" layoutY="246.0" mnemonicParsing="false" onAction="#searchClientsAmount" text="Buscar Clientes" />
+                        
+                        <Label layoutX="20.0" layoutY="305.0" style="-fx-font-weight: bold;" text="Resultados de búsqueda avanzada:" />
+                        
+                        <TableView fx:id="tvAdvanced" layoutX="20.0" layoutY="335.0" prefHeight="140.0" prefWidth="832.0" />
+                        
+                        <Button fx:id="btnClearAdvanced" layoutX="20.0" layoutY="490.0" mnemonicParsing="false" onAction="#clearAdvancedSearch" text="Limpiar Resultados" />
+                        <Label fx:id="lblInfoAdvanced" layoutX="165.0" layoutY="494.0" text="" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>     
+     
+      <Button fx:id="btnReturn" layoutX="743.0" layoutY="650.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="26.0" prefWidth="104.0" text="Regresar" />
+   </children>
+</AnchorPane>

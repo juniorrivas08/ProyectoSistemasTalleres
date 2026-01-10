@@ -1,43 +1,37 @@
-[
-  {
-    "code": 45621,
-    "nameService": "Cambio de aceite",
-    "description": "Cambio completo de aceite del motor y filtro",
-    "baseCost": 30000.0,
-    "hours": 1
-  },
-  {
-    "code": 10234,
-    "nameService": "Alineación y balanceo",
-    "description": "Alineación de las 4 ruedas y balanceo completo",
-    "baseCost": 25000.0,
-    "hours": 2
-  },
-  {
-    "code": 78945,
-    "nameService": "Revisión de frenos",
-    "description": "Inspección completa del sistema de frenos, pastillas y discos",
-    "baseCost": 15000.0,
-    "hours": 1
-  },
-  {
-    "code": 32156,
-    "nameService": "Cambio de batería",
-    "description": "Reemplazo de batería del vehículo incluyendo diagnóstico eléctrico",
-    "baseCost": 45000.0,
-    "hours": 1
-  },
-  {
-    "code": 98712,
-    "nameService": "Servicio de transmisión",
-    "description": "Cambio de aceite de transmisión automática y revisión general",
-    "baseCost": 55000.0,
-    "hours": 3
-  },
-  {
-    "code": 54328,
-    "nameService": "Reparación de suspensión",
-    "description": "Cambio de amortiguadores y revisión de sistema de suspensión",
-    "baseCost": 85000.0,
-    "hours": 4
-  } ]
+[ {
+  "code" : 45621,
+  "nameService" : "Cambio de aceite",
+  "description" : "Cambio completo de aceite del motor y filtro",
+  "baseCost" : 30000.0,
+  "hours" : 1
+}, {
+  "code" : 10234,
+  "nameService" : "Alineación y balanceo",
+  "description" : "Alineación de las 4 ruedas y balanceo completo",
+  "baseCost" : 25000.0,
+  "hours" : 3
+}, {
+  "code" : 78945,
+  "nameService" : "Revisión de frenos",
+  "description" : "Inspección completa del sistema de frenos, pastillas y discos",
+  "baseCost" : 15000.0,
+  "hours" : 1
+}, {
+  "code" : 32156,
+  "nameService" : "Cambio de batería",
+  "description" : "Reemplazo de batería del vehículo incluyendo diagnóstico eléctrico",
+  "baseCost" : 45000.0,
+  "hours" : 1
+}, {
+  "code" : 98712,
+  "nameService" : "Servicio de transmisión",
+  "description" : "Cambio de aceite de transmisión automática y revisión general",
+  "baseCost" : 55000.0,
+  "hours" : 3
+}, {
+  "code" : 54328,
+  "nameService" : "Reparación de suspensión",
+  "description" : "Cambio de amortiguadores y revisión de sistema de suspensión",
+  "baseCost" : 85000.0,
+  "hours" : 4
+} ]
